@@ -1,0 +1,55 @@
+.device-item {
+	width: 375px;
+	height: 812px;
+	border: 14px solid black;
+	border-radius: 30px;
+	transition: all 400ms ease;
+	overflow: auto;
+	
+	&.ipad {
+		width: 768px;
+		height: 1024px;
+		
+		.notch {
+			transform:translateX(50px);
+			width: 300px;
+		}
+		
+		iframe {
+      width: 100% !important;
+      top: -0px;
+		}
+	}
+	
+	iframe {
+		position: relative;
+		overflow: hidden;
+    height: 100%;
+    border: none;
+    left: -1px;
+		top: -0px;
+		transition: all 400ms ease;
+		// top: -48px;
+	}
+	.notch {
+		height: 30px;
+		width: 240px;
+		background: black;
+		position: absolute;
+		top: 14px; left: 190px;
+    transform:translateX(-100px);
+		z-index: 895;
+		border-bottom-right-radius: 40px;
+		border-bottom-left-radius: 40px;
+		transition: all 500ms ease;
+	}
+}
+
+.device-container {
+	position: relative;
+	margin-left: 4em;
+}
+
+section {
+  display: flex;
+}
