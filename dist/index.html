@@ -14,35 +14,54 @@
   </section>
   
   <section>
-    <div class="filter">
+    <div class="filter-parent">
+      <div class="filter">
 
-      <div class="filter__inner">
-        <form action="">
-          <h3>enter your XD url below</h3>
-        <input type="text" name="url" id="url">
-        
-        <h3>Select a device</h3>
-          <select name="device" id="device">
-            <option value="iphone11pro">iPhone 11 Pro</option>
-            <option value="ipad">iPad</option>
-          </select>
+        <div class="filter__inner">
+          <form action="" autocomplete="off">
+            
+  
+            <div class="filter__item">
+              <h3>Enter Your Prototype</h3>
+              <input type="text" name="url" id="url" placeholder="Enter XD Prototype link" autocomplete="off">
+            </div>
           
-          <div>
-            <button type="submit">Go</button>
+            <div class="filter__item">
+              <h3>Select a device</h3>
+              <select name="device" id="device">
+                <option value="iphone11pro">iPhone 11 Pro</option>
+                <option value="ipad">iPad</option>
+              </select>
+            </div>
+            
+            <div class="filter__item">
+              <button type="submit">View Prototype</button>
+            </div>
+          </form>
+          
+          <div class="filter__item">
+            <h3>Share your<br> prototype with others</h3>
+            <span class="icon-save">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> 
+              </span>
+              <span>Copy link</span>
+            </span>
+            <span>
+              <input type="text" id="shared_url" value="http://localhost:1234/view.html?device=iphone11pro&url=https://xd.adobe.com/view/ddc32464-4460-423b-91c0-a47a0fe96c6a-8890/">
+            </span>
           </div>
-        </form>
+        </div>
         
-        <h3>Share your prototype with others</h3>
-          <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy URL</a>
       </div>
-      
     </div>
+
     <div class="device-container">
-    <div class="device-item">
-      <div class="notch"></div>
-      
+      <div class="device-item">
+        <div class="notch"></div>
+        
+      </div>
     </div>
-  </div>
     
   </section>
   

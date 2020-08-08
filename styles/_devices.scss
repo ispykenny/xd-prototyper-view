@@ -11,13 +11,22 @@
 		height: 1024px;
 		
 		.notch {
-			transform:translateX(50px);
-			width: 300px;
+			transform:translateX(60px);
+			width: 280px;
+			height: 25px;
 		}
 		
 		iframe {
       width: 100% !important;
-      top: -0px;
+			top: -0px;
+			transform: translateX(0.13%);
+		}
+	}
+
+	&.iphone11pro {
+
+		iframe {
+			transform: translateX(0.2%);
 		}
 	}
 	
@@ -29,11 +38,11 @@
     left: -1px;
 		top: -0px;
 		transition: all 400ms ease;
-		// top: -48px;
+		transform: translateX(0.2%);
 	}
 	.notch {
-		height: 30px;
-		width: 240px;
+		height: 28px;
+		width: 220px;
 		background: black;
 		position: absolute;
 		top: 14px; left: 190px;
