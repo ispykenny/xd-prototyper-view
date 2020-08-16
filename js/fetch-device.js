@@ -1,3 +1,5 @@
+import shared_url from "./set-share-url";
+
 const fetchDevice = () => {
   const iFrame_input = document.querySelector('#url');
   const form = document.querySelector('form');
@@ -15,7 +17,6 @@ const fetchDevice = () => {
         event.preventDefault();
       }
     }
-    
     
     if(paramUrl) {
       console.log(paramUrl)
@@ -36,7 +37,17 @@ const fetchDevice = () => {
   if(hasParams.get('url')) {
     let paramUrl = hasParams.get('url')
     add_iframe('', paramUrl);
+    shared_url.value = 'http://localhost:1234/view.html?url='+paramUrl
   }
+
+
+  if(hasParams.get('url') && hasParams.get('device')) {
+    shared_url.value = 'http://localhost:1234/view.html?url='+hasParams.get('url')+'&device='+hasParams.get('device')
+    console.log('working')
+  }
+
+
+
 
   const changeDevice = event => {
     device_parent.className = '';

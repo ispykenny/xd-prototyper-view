@@ -117,13 +117,27 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/fetch-device.js":[function(require,module,exports) {
+})({"js/set-share-url.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var shared_url = document.querySelector("#shared_url");
+var _default = shared_url;
+exports.default = _default;
+},{}],"js/fetch-device.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _setShareUrl = _interopRequireDefault(require("./set-share-url"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var fetchDevice = function fetchDevice() {
   var iFrame_input = document.querySelector('#url');
@@ -158,6 +172,12 @@ var fetchDevice = function fetchDevice() {
   if (hasParams.get('url')) {
     var paramUrl = hasParams.get('url');
     add_iframe('', paramUrl);
+    _setShareUrl.default.value = 'http://localhost:1234/view.html?url=' + paramUrl;
+  }
+
+  if (hasParams.get('url') && hasParams.get('device')) {
+    _setShareUrl.default.value = 'http://localhost:1234/view.html?url=' + hasParams.get('url') + '&device=' + hasParams.get('device');
+    console.log('working');
   }
 
   var changeDevice = function changeDevice(event) {
@@ -177,7 +197,7 @@ var fetchDevice = function fetchDevice() {
 
 var _default = fetchDevice;
 exports.default = _default;
-},{}],"js/index.js":[function(require,module,exports) {
+},{"./set-share-url":"js/set-share-url.js"}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _fetchDevice = _interopRequireDefault(require("./fetch-device"));
@@ -213,7 +233,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59994" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50977" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
